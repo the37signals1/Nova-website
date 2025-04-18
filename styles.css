@@ -1,8 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Schoolbell&display=swap');
-
-
-
-
 body {
     background: linear-gradient(
         135deg,
@@ -10,7 +6,7 @@ body {
         rgb(255, 229, 240) /* Light pastel pink */
     );
     background-size: 400% 400%;
-    animation: bodyGradient 10s ease infinite; /* Add animation for a dynamic effect */
+    animation: bodyGradient 10s ease infinite, fadeIn 1.5s ease-in-out; /* Add animation for a dynamic effect */
     font-family: 'Schoolbell', cursive;
     display: flex;
     flex-direction: column;
@@ -30,6 +26,31 @@ body {
     100% {
         background-position: 0% 50%;
     }
+}
+
+/* Add animations for website load-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+div, table {
+    animation: slideIn 1.5s ease-in-out;
 }
 
 .yuri {
@@ -194,6 +215,16 @@ video {
     border-radius: 10px;
 }
 
+footer {
+    font-size: 1.2em; /* Increase font size for better visibility */
+    text-align: center; /* Center the text */
+    margin-top: 20px; /* Add spacing above the footer */
+    padding: 10px; /* Add padding for better spacing */
+    background-color: #f5f5f5; /* Light background for contrast */
+    color: #333; /* Dark text color */
+    border-top: 2px solid #ddd; /* Subtle border for separation */
+}
+
 /* Media query for phones */
 @media (max-width: 600px) {
     body {
@@ -208,11 +239,7 @@ video {
         width: 100%;
         max-width: none;
     }
-    .yellowjackets-insignia{
-        width: 20vw; /* Adjust insignia size for smaller screens */
-        height: 20vw; /* Maintain aspect ratio */
     }
-}
 
 @media (max-width: 768px) {
     body {
@@ -263,10 +290,3 @@ video {
         width: 100%;
     }
 }
-
-
-
-
-
-
-
